@@ -1,4 +1,4 @@
-Ext.define('EmailCientApp.model.User', {
+Ext.define('EmailClientApp.model.User', {
 
    extend:'Ext.data.Model',
 
