@@ -1,1 +1,1 @@
-# EmailCientApp
+# EmailClientApp
