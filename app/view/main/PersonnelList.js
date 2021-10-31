@@ -1,7 +1,7 @@
 /**
  * This view is an example list of people.
  */
-Ext.define('EmailClient.view.main.List', {
+Ext.define('EmailClient.view.main.PersonnelList', {
     extend: 'Ext.grid.Panel',
     xtype: 'mainlist',
 

@@ -3,7 +3,7 @@ Ext.define('EmailClientApp.store.Emails', {
     extend:'Ext.data.Store',
     alias: 'store.emails',
  
-    model: 'EmailCientApp.model.Email',
+    model: 'EmailClientApp.model.Email',
     proxy: {
         type: 'rest',
         url: 'http://localhost:3000/emails',

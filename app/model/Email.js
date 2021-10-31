@@ -8,6 +8,6 @@ Ext.define('EmailClientApp.model.Email', {
      {name: 'from', type: 'string'},
      {name: 'title', type: 'string'},
      {name: 'body', type: 'string'},
-     {name: 'date', type: 'string'},
+     {name: 'date', type: 'date'},
      ],
  });

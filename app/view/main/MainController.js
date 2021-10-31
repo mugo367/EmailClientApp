@@ -15,5 +15,15 @@ Ext.define('EmailClient.view.main.MainController', {
         if (choice === 'yes') {
             //
         }
+    }, 
+
+    onComposeClick: function(){
+        var me = this;
+         me.showForm();
+     },
+     showForm: function(record) {
+        var window = Ext.create({
+            xtype: 'composeMail',
+        });
     }
 });

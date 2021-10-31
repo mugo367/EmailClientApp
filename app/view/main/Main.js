@@ -8,14 +8,17 @@
 Ext.define('EmailClient.view.main.Main', {
     extend: 'Ext.tab.Panel',
     xtype: 'app-main',
+    padding: '10px',
 
     requires: [
         'Ext.plugin.Viewport',
         'Ext.window.MessageBox',
+        
 
         'EmailClient.view.main.MainController',
         'EmailClient.view.main.MainModel',
-        'EmailClient.view.main.List'
+
+        'EmailClient.view.main.PersonnelList'
     ],
 
     controller: 'main',
@@ -23,9 +26,43 @@ Ext.define('EmailClient.view.main.Main', {
 
     ui: 'navigation',
 
-    tabBarHeaderPosition: 1,
+    tabBarHeaderPosition: 0,
     titleRotation: 0,
     tabRotation: 0,
+     tbar:[
+         {
+             xtype: 'button',
+             text : '<i class="fas fa-edit"></i>  Compose',
+             scale: 'medium',
+             tooltip: 'Compose Mail',
+             handler:'onComposeClick'
+        },
+        {
+            xtype: 'button',
+            text : '<i class="fas fa-sync"></i>',
+            scale: 'medium'
+       },
+       {
+            xtype: 'button',
+            text : '<i class="fas fa-trash"></i>',
+            scale: 'medium'
+        },
+        '->',
+        {
+            xtype: 'button',
+            text : '<i class="fas fa-cog"></i>',
+            
+            scale: 'medium'
+        },
+        
+        {
+            xtype: 'button',
+            text : '<i class="fas fa-user-circle"></i>',
+            scale: 'medium'
+        }
+        
+
+    ],
 
     header: {
         layout: {
@@ -62,11 +99,11 @@ Ext.define('EmailClient.view.main.Main', {
         tabConfig: {
             responsiveConfig: {
                 wide: {
-                    iconAlign: 'left',
-                    textAlign: 'left'
+                    iconAlign: 'center',
+                    textAlign: 'center'
                 },
                 tall: {
-                    iconAlign: 'top',
+                    iconAlign: 'center',
                     textAlign: 'center',
                     width: 120
                 }
@@ -75,29 +112,30 @@ Ext.define('EmailClient.view.main.Main', {
     },
 
     items: [{
-        title: 'Home',
-        iconCls: 'fa-home',
-        // The following grid shares a store with the classic version's grid as well!
+        title: 'Inbox',
+        iconCls: 'fa-inbox',
         items: [{
-            xtype: 'mainlist'
+            xtype: 'inbox'
         }]
     }, {
-        title: 'Users',
-        iconCls: 'fa-user',
+        title: 'Sent Mail',
+        iconCls: 'fa-check-circle',
         bind: {
             html: '{loremIpsum}'
         }
     }, {
-        title: 'Groups',
-        iconCls: 'fa-users',
+        title: 'Spam',
+        iconCls: 'fa-exclamation',
         bind: {
             html: '{loremIpsum}'
         }
-    }, {
-        title: 'Settings',
-        iconCls: 'fa-cog',
+    }, 
+    {
+        title: 'Delete',
+        iconCls: 'fa-trash',
         bind: {
             html: '{loremIpsum}'
         }
-    }]
+    }
+]
 });
