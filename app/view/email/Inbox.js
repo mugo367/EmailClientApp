@@ -1,6 +1,7 @@
 Ext.define('EmailClient.view.main.Inbox', {
     extend: 'Ext.grid.Panel',
     xtype: 'inbox',
+    controller:'inboxviewcontroller',
 
     requires: [
         'EmailClient.store.Inbox'

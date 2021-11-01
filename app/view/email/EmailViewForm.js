@@ -1,6 +1,6 @@
-Ext.define('Learning.view.email.EmailForm', {
+Ext.define('Learning.view.email.EmailViewForm', {
     extend:'Ext.window.Window',
-    xtype:'composeMail',
+    xtype:'viewMail',
     layout:'fit',
     
     width:1000,
@@ -15,26 +15,44 @@ Ext.define('Learning.view.email.EmailForm', {
             reference:'form',
             jsonSubmit: true,
             defaults:{
-                anchor:'100%',
+                anchor:'95%',
                 allowBlank: false,
             },
-            items:[
-                {
-                  xtype:'textfield',
-                  name: 'recipient',
-                  fieldLabel: 'To',
-                  vtype: 'email'
+
             
+            items:[{
+
+                    xtype:'fieldset',
+                    collapsible: true,
+                    columnWidth:0.8,
+                    defaults: {anchor: '100%'},
+                    layout: 'anchor',
+                    items :[{
+                        xtype:'textfield',
+                        reference: 'email',
+                        name:'email',
+                        editable: false,
+                       
+                      },
+                      {
+                          xtype:'textfield',
+                          name: 'title',
+                          editable: false,
+                          
+                      },
+                      {
+                          xtype:'textarea',
+                          name: 'body',
+                          editable: false,
+
+                      }
+                    ]
                 },
-                {
-                    xtype:'textfield',
-                    name: 'title',
-                    fieldLabel: 'Subject',
-  
-                },
+                
+                
                 {
                     xtype     : 'htmleditor',
-                    name      : 'body',
+                    name      : 'reply',
                     fieldLabel: 'Message',
                     height: 350,
                 },

@@ -13,7 +13,6 @@ Ext.define('EmailClient.view.main.Main', {
     requires: [
         'Ext.plugin.Viewport',
         'Ext.window.MessageBox',
-        
 
         'EmailClient.view.main.MainController',
         'EmailClient.view.main.MainModel',
@@ -47,6 +46,8 @@ Ext.define('EmailClient.view.main.Main', {
             text : '<i class="fas fa-trash"></i>',
             scale: 'medium'
         },
+        
+        
         '->',
         {
             xtype: 'button',
