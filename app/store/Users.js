@@ -1,4 +1,4 @@
-Ext.define('EmailClientApp.store.Users', {
+Ext.define('EmailClient.store.Users', {
 
    extend:'Ext.data.Store',
    alias: 'store.users',

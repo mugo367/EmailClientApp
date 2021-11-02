@@ -11,8 +11,12 @@ Ext.application({
         // This will automatically load all classes in the EmailClient namespace
         // so that application classes do not need to require each other.
         'EmailClient.*'
+
     ],
 
     // The name of the initial view to create.
-    mainView: 'EmailClient.view.main.Main'
+    // mainView: 'EmailClient.view.main.Main'
+    // mainView: 'EmailClient.view.auth.Login'
+
+
 });

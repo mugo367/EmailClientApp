@@ -21,6 +21,7 @@ Ext.define('EmailClient.view.main.Main', {
         'EmailClient.view.main.PersonnelList'
     ],
 
+    plugins: 'viewport',
     controller: 'main',
     viewModel: 'main',
 

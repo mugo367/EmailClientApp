@@ -1,12 +1,12 @@
-Ext.define('EmailClientApp.store.Emails', {
+Ext.define('EmailClient.store.Outbox', {
 
     extend:'Ext.data.Store',
     alias: 'store.emails',
  
-    model: 'EmailClientApp.model.Email',
+    model: 'EmailClientApp.model.Outbox',
     proxy: {
         type: 'rest',
-        url: 'http://localhost:3000/emails',
+        url: 'http://localhost:3000/outbox',
  
         reader: {
             type: 'json',
