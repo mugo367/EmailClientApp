@@ -1,10 +1,10 @@
-Ext.define('Learning.view.email.EmailViewForm', {
+Ext.define('EmailClient.view.email.EmailViewForm', {
     extend:'Ext.window.Window',
     xtype:'viewMail',
     layout:'fit',
     
     width:1000,
-    padding: '30 10 10 10',
+    padding: '20 10 10 10',
     shadow:true,
     modal:true,
     autoShow:true,

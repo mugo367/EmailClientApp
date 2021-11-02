@@ -1,4 +1,4 @@
-Ext.define('EmailClientApp.view.email.InboxViewModel', {
+Ext.define('EmailClient.view.email.InboxViewModel', {
     extend: 'Ext.app.ViewModel',
     alias: 'viewmodel.inboxviewmodel',
 

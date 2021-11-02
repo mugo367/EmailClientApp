@@ -1,4 +1,4 @@
-Ext.define('EmailClientApp.view.email.InboxViewController', {
+Ext.define('EmailClient.view.email.InboxViewController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.inboxviewcontroller',
 
@@ -13,7 +13,7 @@ Ext.define('EmailClientApp.view.email.InboxViewController', {
              }
          });
          if (record) {
-             var form = window.getForm();
+             var form = window.lookupReference('form').getForm();
              form.loadRecord(record);
          }
      },

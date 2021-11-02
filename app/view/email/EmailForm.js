@@ -1,4 +1,4 @@
-Ext.define('Learning.view.email.EmailForm', {
+Ext.define('EmailClient.view.email.EmailForm', {
     extend:'Ext.window.Window',
     xtype:'composeMail',
     layout:'fit',
