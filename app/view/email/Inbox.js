@@ -20,10 +20,10 @@ Ext.define('EmailClient.view.main.Inbox', {
     },
 
     columns: [
-        { text: 'From',  dataIndex: 'name' },
+        { text: 'From',  dataIndex: 'from' },
         { text: 'Title', dataIndex: 'title', flex: 1 },
         { text:'<i class="fas fa-paperclip"></i>', dataIndex: 'attachment'},
-        { xtype: 'datecolumn', text: 'Received', dataIndex: 'dateReceived', flex: 0.5},
+        { xtype: 'datecolumn', text: 'Received', dataIndex: 'date', flex: 0.5},
 
     ],
 

@@ -27,7 +27,8 @@ Ext.define('EmailClient.view.auth.Login', {
             xtype: 'textfield',
             name: 'email',
             fieldLabel: 'Email',
-            allowBlank: false
+            allowBlank: false,
+            vtype: 'email'
         }, 
         {
             xtype: 'textfield',

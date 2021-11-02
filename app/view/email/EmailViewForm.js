@@ -3,7 +3,7 @@ Ext.define('EmailClient.view.email.EmailViewForm', {
     xtype:'viewMail',
     layout:'fit',
     
-    width:1000,
+    width:820,
     padding: '20 10 10 10',
     shadow:true,
     modal:true,
@@ -23,13 +23,14 @@ Ext.define('EmailClient.view.email.EmailViewForm', {
             items:[{
 
                     xtype:'fieldset',
-                    collapsible: true,
+                    // collapsible: true,
                     columnWidth:0.8,
                     defaults: {anchor: '100%'},
                     layout: 'anchor',
                     items :[{
                         xtype:'textfield',
                         reference: 'email',
+                        fieldLabel: 'To',
                         name:'email',
                         editable: false,
                        
@@ -37,11 +38,12 @@ Ext.define('EmailClient.view.email.EmailViewForm', {
                       {
                           xtype:'textfield',
                           name: 'title',
+                          fieldLabel: 'Title',
                           editable: false,
-                          
                       },
                       {
                           xtype:'textarea',
+                          fieldLabel: 'Body',
                           name: 'body',
                           editable: false,
 
@@ -54,7 +56,7 @@ Ext.define('EmailClient.view.email.EmailViewForm', {
                     xtype     : 'htmleditor',
                     name      : 'reply',
                     fieldLabel: 'Message',
-                    height: 350,
+                    height: 150,
                 },
 
                 {

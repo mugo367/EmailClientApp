@@ -44,6 +44,5 @@ Ext.define('EmailClient.view.auth.LoginController', {
                statics.helper(response, formdata, me);
             }
         });
-
     }
 });

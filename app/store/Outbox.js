@@ -1,7 +1,7 @@
 Ext.define('EmailClient.store.Outbox', {
 
     extend:'Ext.data.Store',
-    alias: 'store.emails',
+    alias: 'store.outbox',
  
     model: 'EmailClientApp.model.Outbox',
     proxy: {
@@ -10,7 +10,7 @@ Ext.define('EmailClient.store.Outbox', {
  
         reader: {
             type: 'json',
-            rootProperty: 'emails'
+            rootProperty: 'outbox'
         }
     },
     autoLoad: true,

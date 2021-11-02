@@ -1,7 +1,7 @@
 Ext.define('EmailClient.store.Drafts', {
 
     extend:'Ext.data.Store',
-    alias: 'store.emails',
+    alias: 'store.drafts',
  
     model: 'EmailClientApp.model.Draft',
     proxy: {
@@ -10,7 +10,7 @@ Ext.define('EmailClient.store.Drafts', {
  
         reader: {
             type: 'json',
-            rootProperty: 'emails'
+            rootProperty: 'drafts'
         }
     },
     autoLoad: true,
