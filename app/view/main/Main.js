@@ -130,9 +130,9 @@ Ext.define('EmailClient.view.main.Main', {
     }, {
         title: 'Sent Mail',
         iconCls: 'fa-check-circle',
-        bind: {
-            html: '{loremIpsum}'
-        }
+        items: [{
+            xtype: 'outbox'
+        }]
     }, {
         title: 'Spam',
         iconCls: 'fa-exclamation',
