@@ -1,4 +1,4 @@
-Ext.define('EmailClient.view.email.EmailFormController', {
+Ext.define('EmailClient.view.composer.EmailFormController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.emailformcontroller'
 

@@ -61,8 +61,16 @@ Ext.define('EmailClient.view.main.Main', {
             xtype: 'button',
             text : '<i class="fas fa-user-circle"></i>',
             scale: 'medium'
+        },
+        {
+            xtype: 'button',
+            text : ' <i class="fas fa-sign-out-alt"></i> LogOut',
+            scale: 'medium',
+            handler:'onLogOutClick'
         }
         
+       
+
 
     ],
 

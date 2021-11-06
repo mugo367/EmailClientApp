@@ -23,5 +23,18 @@ Ext.define('EmailClient.view.main.MainController', {
         var window = Ext.create({
             xtype: 'composeMail',
         });
-    }
+    },
+    onLogOutClick: function(){
+        var me = this,
+            view = me.getView(),
+            model = me.getViewModel(),
+            refs = me.getReferences();
+
+        localStorage.removeItem('isLoggedIn');
+        view.destroy();
+        Ext.create({
+            xtype: 'login'
+        });
+
+     },
 });

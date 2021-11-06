@@ -1,4 +1,4 @@
-Ext.define('EmailClient.view.email.EmailViewForm', {
+Ext.define('EmailClient.view.viewer.EmailViewForm', {
     extend:'Ext.window.Window',
     xtype:'viewMail',
     layout:'fit',
@@ -8,7 +8,6 @@ Ext.define('EmailClient.view.email.EmailViewForm', {
     shadow:true,
     modal:true,
     autoShow:true,
-    title:'Compose Email',
     items:[
         {
             xtype : 'form',
@@ -30,7 +29,7 @@ Ext.define('EmailClient.view.email.EmailViewForm', {
                     items :[{
                         xtype:'textfield',
                         reference: 'email',
-                        fieldLabel: 'To',
+                        fieldLabel: 'From',
                         name:'email',
                         editable: false,
                        
