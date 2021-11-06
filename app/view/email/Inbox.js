@@ -12,11 +12,19 @@ Ext.define('EmailClient.view.main.Inbox', {
     },
 
     layout: 'fit',
+
     selModel: {
-        injectCheckbox: 'first',
-        checkOnly: false,
+        type: 'spreadsheet',
+        rowSelect: true,
+        rowNumbererHeaderWidth: 0,
         mode: 'MULTI',
-        type: 'checkboxmodel',
+        checkboxSelect: true,
+        pruneRemoved: false,
+        extensible: false,
+    },
+
+    listeners: {
+        selectionchange: 'onSelectionChange',
     },
 
     columns: [
@@ -27,7 +35,11 @@ Ext.define('EmailClient.view.main.Inbox', {
 
     ],
 
-    listeners: {
-        select: 'onItemSelected'
-    }
+    // bbar: 
+    // {
+    //     xtype: 'paginginfo',
+    //     displayInfo: true,
+    //     displayMsg: 'Emails {0} - {1} of {2}',
+    //     emptyMsg: 'No Email to display'
+    // }
 });

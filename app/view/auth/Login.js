@@ -15,11 +15,6 @@ Ext.define('EmailClient.view.auth.Login', {
     autoShow: true,
     closable: false,
 
-    viewmodel: {
-        type: 'loginviewmodel'
-    },
-    
-
     items: {
         xtype: 'form',
         reference: 'loginform',
@@ -35,7 +30,8 @@ Ext.define('EmailClient.view.auth.Login', {
             name: 'password',
             inputType: 'password',
             fieldLabel: 'Password',
-            allowBlank: false
+            allowBlank: false,
+            // vtype: 'mypassword'
         }],
 
         buttons: [

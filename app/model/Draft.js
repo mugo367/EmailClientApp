@@ -9,6 +9,7 @@ Ext.define('EmailClientApp.model.Draft', {
      {name: 'title', type: 'string'},
      {name: 'body', type: 'string'},
      {name: 'date', type: 'date'},
+     {name: 'attachment', type: 'string'},
      
      ],
  });
