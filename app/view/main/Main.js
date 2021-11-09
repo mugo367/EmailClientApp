@@ -1,151 +1,84 @@
-/**
- * This class is the main view for the application. It is specified in app.js as the
- * "mainView" property. That setting automatically applies the "viewport"
- * plugin causing this view to become the body element (i.e., the viewport).
- *
- * TODO - Replace this content of this view to suite the needs of your application.
- */
+
 Ext.define('EmailClient.view.main.Main', {
-    extend: 'Ext.tab.Panel',
+    extend: 'Ext.container.Viewport',
     xtype: 'app-main',
     padding: '10px',
-
-    requires: [
-        'Ext.plugin.Viewport',
-        'Ext.window.MessageBox',
-
-        'EmailClient.view.main.MainController',
-        'EmailClient.view.main.MainModel',
-
-        'EmailClient.view.main.PersonnelList'
-    ],
-
-    plugins: 'viewport',
     controller: 'main',
     viewModel: 'main',
-
-    ui: 'navigation',
-
-    tabBarHeaderPosition: 0,
-    titleRotation: 0,
-    tabRotation: 0,
-     tbar:[
-         {
-             xtype: 'button',
-             text : '<i class="fas fa-edit"></i>  Compose',
-             scale: 'medium',
-             tooltip: 'Compose Mail',
-             handler:'onComposeClick'
-        },
+    layout: 'border',
+    
+    items: [
         {
-            xtype: 'button',
-            text : '<i class="fas fa-sync"></i>',
-            scale: 'medium'
-       },
-       {
-            xtype: 'button',
-            text : '<i class="fas fa-trash"></i>',
-            scale: 'medium'
+            region: 'north',
+            border: false,
+            margin: '0 0 5 0',
+            xtype: 'toolbar',
+            items:[
+               '->',
+               {
+                   xtype: 'button',
+                   text : '<i class="fas fa-cog"></i>',
+                   
+                   scale: 'medium'
+               },
+               
+               {
+                   xtype: 'button',
+                   text : '<i class="fas fa-user-circle"></i>',
+                   scale: 'medium'
+               },
+               {
+                   xtype: 'button',
+                   text : ' <i class="fas fa-sign-out-alt"></i> LogOut',
+                   scale: 'medium',
+                   handler:'onLogOutClick'
+               }
+           ],
         },
-        
-        
-        '->',
-        {
-            xtype: 'button',
-            text : '<i class="fas fa-cog"></i>',
-            
-            scale: 'medium'
-        },
-        
-        {
-            xtype: 'button',
-            text : '<i class="fas fa-user-circle"></i>',
-            scale: 'medium'
-        },
-        {
-            xtype: 'button',
-            text : ' <i class="fas fa-sign-out-alt"></i> LogOut',
-            scale: 'medium',
-            handler:'onLogOutClick'
-        }
-        
-       
-
-
-    ],
-
-    header: {
-        layout: {
-            align: 'stretchmax'
-        },
-        title: {
-            bind: {
-                text: '{name}'
-            },
-            flex: 0
-        },
-        iconCls: 'fa-th-list'
-    },
-
-    tabBar: {
-        flex: 1,
-        layout: {
-            align: 'stretch',
-            overflowHandler: 'none'
-        }
-    },
-
-    responsiveConfig: {
-        tall: {
-            headerPosition: 'top'
-        },
-        wide: {
-            headerPosition: 'left'
-        }
-    },
-
-    defaults: {
-        bodyPadding: 20,
-        tabConfig: {
-            responsiveConfig: {
-                wide: {
-                    iconAlign: 'center',
-                    textAlign: 'center'
-                },
-                tall: {
-                    iconAlign: 'center',
-                    textAlign: 'center',
-                    width: 120
+        {   
+            padding: '5px',
+            region: 'west',
+            title:'Email Client', 
+            collapsible: true,
+            width: 200,
+            items: [
+                {
+                    xtype: 'navigationpanel'
                 }
-            }
-        }
-    },
+            ]
+        },
+        {
+            padding: '5px',
+            region: 'center',
+            itemId: 'center',
+            xtype: 'tabpanel',
+            
+            tbar:[
+                {
+                    xtype: 'button',
+                    text : '<i class="fas fa-edit"></i>  Compose',
+                    scale: 'medium',
+                    tooltip: 'Compose Mail',
+                    handler:'onComposeClick'
+                },
+                {
+                    xtype: 'button',
+                    text : '<i class="fas fa-sync"></i>',
+                    scale: 'medium'
+                },
+                {
+                    xtype: 'button',
+                    text : '<i class="fas fa-trash"></i>',
+                    scale: 'medium'
+                },
+            ],
 
-    items: [{
-        title: 'Inbox',
-        iconCls: 'fa-inbox',
-        items: [{
-            xtype: 'inbox'
-        }]
-    }, {
-        title: 'Sent Mail',
-        iconCls: 'fa-check-circle',
-        items: [{
-            xtype: 'outbox'
-        }]
-    }, {
-        title: 'Spam',
-        iconCls: 'fa-exclamation',
-        bind: {
-            html: '{loremIpsum}'
+            items: [
+                {
+                    title: 'Inbox',
+                    xtype: 'inbox',
+                }, 
+            ]
         }
-    }, 
-    {
-        title: 'Delete',
-        iconCls: 'fa-trash',
-        bind: {
-            html: '{loremIpsum}'
-        }
-    }
-]
+    ]
 });
