@@ -21,15 +21,22 @@ Ext.define('EmailClient.view.main.NavigationPanelController', {
 
         //console.log(record);
         if (newItem === null || newItem === undefined) {
-            centerPanel.doRemove(centerPanel.getActiveTab());
-            newItem = centerPanel.add({
-                xtype: record.get('xtype'),
-                title: record.get('text'),
-                closable: true,
-            });
+            var tab = centerPanel.getActiveTab();
+            if (tab === undefined){
+                newItem = centerPanel.add({
+                    xtype: record.get('xtype'),
+                    title: record.get('text'),
+                    closable: true,
+                });
+            }else{
+                centerPanel.doRemove(tab);
+                newItem = centerPanel.add({
+                    xtype: record.get('xtype'),
+                    title: record.get('text'),
+                    closable: true,
+                });
+            }
         }
-       
-    
         centerPanel.setActiveItem(newItem);
     }
 });

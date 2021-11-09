@@ -14,6 +14,22 @@ Ext.define('EmailClient.view.main.Main', {
             margin: '0 0 5 0',
             xtype: 'toolbar',
             items:[
+                {
+                    xtype: 'combo',
+                    width: '50%',
+                    store: {
+                        type: 'inbox',
+                        pageSize: 10
+                    },
+                    displayField: 'title',
+                    typeAhead: false,
+                    hideLabel: true,
+                    hideTrigger: true,
+                    cls: 'forum-searchIcon',
+                    anchor: '100%',
+        
+                
+                },
                '->',
                {
                    xtype: 'button',
@@ -53,6 +69,7 @@ Ext.define('EmailClient.view.main.Main', {
             itemId: 'center',
             xtype: 'tabpanel',
             
+            
             tbar:[
                 {
                     xtype: 'button',
@@ -77,6 +94,7 @@ Ext.define('EmailClient.view.main.Main', {
                 {
                     title: 'Inbox',
                     xtype: 'inbox',
+                    clossable: false,
                 }, 
             ]
         }

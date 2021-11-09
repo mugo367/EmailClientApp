@@ -7,14 +7,6 @@ Ext.define('EmailClient.view.main.MainController', {
 
     alias: 'controller.main',
 
-
-
-    onConfirm: function (choice) {
-        if (choice === 'yes') {
-            //
-        }
-    }, 
-
     onComposeClick: function(){
         var me = this;
          me.showForm();
