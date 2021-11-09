@@ -21,6 +21,7 @@ Ext.define('EmailClient.view.main.NavigationPanelController', {
 
         //console.log(record);
         if (newItem === null || newItem === undefined) {
+            centerPanel.doRemove(centerPanel.getActiveTab());
             newItem = centerPanel.add({
                 xtype: record.get('xtype'),
                 title: record.get('text'),
@@ -28,8 +29,7 @@ Ext.define('EmailClient.view.main.NavigationPanelController', {
             });
         }
        
-       
-
+    
         centerPanel.setActiveItem(newItem);
     }
 });
