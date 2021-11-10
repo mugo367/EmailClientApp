@@ -30,7 +30,7 @@ Ext.define('EmailClient.view.viewer.EmailViewForm', {
                         xtype:'textfield',
                         reference: 'email',
                         fieldLabel: 'From',
-                        name:'email',
+                        bind:'{from}',
                         editable: false,
                        
                       },
@@ -38,12 +38,14 @@ Ext.define('EmailClient.view.viewer.EmailViewForm', {
                           xtype:'textfield',
                           name: 'title',
                           fieldLabel: 'Title',
+                          bind:'{title}',
                           editable: false,
                       },
                       {
                           xtype:'textarea',
                           fieldLabel: 'Body',
                           name: 'body',
+                          bind:'{body}',
                           editable: false,
 
                       }

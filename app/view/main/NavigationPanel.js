@@ -2,9 +2,7 @@ Ext.define('EmailClient.view.main.NavigationPanel', {
     extend: 'Ext.tree.Panel',
     xtype: 'navigationpanel',
     controller: 'navigationpanelcontroller',
-    rootVisible: false,
-
-   
+    rootVisible: false,   
     padding: '5px',
     
 
@@ -12,8 +10,6 @@ Ext.define('EmailClient.view.main.NavigationPanel', {
         type: 'menu'
     },
 
-    
-    
     listeners: {
         itemclick: 'onItemClick',
     }

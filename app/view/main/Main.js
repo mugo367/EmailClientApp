@@ -53,7 +53,7 @@ Ext.define('EmailClient.view.main.Main', {
             region: 'center',
             itemId: 'center',
             xtype: 'tabpanel',
-            
+            closable: false,
             
             tbar:[
                 {
@@ -96,7 +96,7 @@ Ext.define('EmailClient.view.main.Main', {
                 {
                     title: 'Inbox',
                     xtype: 'inbox',
-                    clossable: false,
+                    
                 }, 
             ]
         }

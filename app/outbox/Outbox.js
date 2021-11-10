@@ -11,18 +11,27 @@ Ext.define('EmailClient.view.outbox.Outbox', {
     },
 
     layout: 'fit',
-    selModel: {
-        injectCheckbox: 'first',
-        checkOnly: false,
-        mode: 'MULTI',
-        type: 'checkboxmodel',
-    },
-
+    
     columns: [
-        { text: 'To',  dataIndex: 'to' },
-        { text: 'Title', dataIndex: 'title', flex: 1 },
-        { text:'<i class="fas fa-paperclip"></i>', dataIndex: 'attachment'},
-        { xtype: 'datecolumn', text: 'Received', dataIndex: 'dateReceived', flex: 0.5},
+        { 
+            text: 'To',  
+            dataIndex: 'to', 
+            flex: 0.5 
+        },
+        { 
+            text: 'Title', 
+            dataIndex: 'title', 
+            flex: 1 },
+        { 
+            text:'<i class="fas fa-paperclip"></i>', 
+            dataIndex: 'attachment'
+        },
+        { 
+            xtype: 'datecolumn', 
+            text: 'Received', 
+            dataIndex: 'date', 
+            flex: 0.5
+        },
 
     ],
 
@@ -32,6 +41,7 @@ Ext.define('EmailClient.view.outbox.Outbox', {
                 '<p><b>To: </b> {to}</p>',
                 '<p><b>Title: </b> {title}</p><br>',
                 '<p><b>Message: </b><br> {body}</p>',
+                '<p style="text-align:right;"><b>Received at: </b> {date}</p>',
                 )
         }
     },
@@ -43,7 +53,5 @@ Ext.define('EmailClient.view.outbox.Outbox', {
         emptyMsg: 'No Email to display'
     },
 
-    listeners: {
-        select: 'onItemSelected'
-    }
+    
 }); 

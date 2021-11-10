@@ -4,8 +4,20 @@
  */
 Ext.define('EmailClient.view.main.MainController', {
     extend: 'Ext.app.ViewController',
-
     alias: 'controller.main',
+
+
+    routes: {
+        'inbox': 'onInboxUrlActivated',
+        'outbox': 'onOutboxUrlActivated',
+    },
+
+
+    init: function() {
+        var me = this,
+            viewport = me.getView(),
+            center = viewport.lookupReference('center');
+    },
 
     onComposeClick: function(){
         var me = this;
@@ -16,6 +28,44 @@ Ext.define('EmailClient.view.main.MainController', {
             xtype: 'composeMail',
         });
     },
+    onInboxUrlActivated: function() {
+        this.showView("Inbox", "inbox");
+    },
+
+    onOutboxUrlActivated: function() {
+        this.showView("Outbox", "outbox");
+    },
+
+
+    showView: function(title, xtype) {
+        var centerPanel = Ext.ComponentQuery.query('app-main #center')[0];
+        
+        var newItem = centerPanel.items.findBy(function(item, index) {
+            return title === item.title;
+        });
+
+       
+        if (newItem === null || newItem === undefined) {
+            var tab = centerPanel.getActiveTab();
+            if (tab === undefined){
+                newItem = centerPanel.add({
+                    xtype: xtype,
+                    title: title,
+                    closable: true,
+                });
+            }else{
+                centerPanel.doRemove(tab);
+                newItem = centerPanel.add({
+                    xtype: xtype,
+                    title: title,
+                    closable: true,
+                });
+            }
+        }
+        centerPanel.setActiveItem(newItem);
+    },
+
+
     onLogOutClick: function(){
         var me = this,
             view = me.getView(),

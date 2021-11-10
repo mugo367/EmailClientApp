@@ -11,6 +11,7 @@ Ext.define('EmailClient.store.Menu', {
                 text: 'Inbox',
                 leaf: true,
                 iconCls: 'fa-inbox',
+                url:'inbox',
                 xtype: 'inbox'
 
             },
@@ -18,18 +19,22 @@ Ext.define('EmailClient.store.Menu', {
                 text: 'Outbox',
                 leaf: true,
                 iconCls: 'fa-check-circle',
+                url:'outbox',
                 xtype: 'outbox'
             },
             
             {
                 text: 'Spam',
                 leaf: true,
+                url:'spam',
                 iconCls: 'fa-exclamation',
+                xtype: 'spam'
             },
             {
                 text:'Delete',
                 leaf: true,
-    
+                url:'delete',
+                xtype: 'delete',
                 iconCls: 'fa-trash',
             }
             
