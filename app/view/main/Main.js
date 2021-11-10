@@ -82,12 +82,28 @@ Ext.define('EmailClient.view.main.Main', {
                         type: 'inbox',
                         pageSize: 10
                     },
-                    displayField: 'title',
+                    displayField: 'from',
+                    valueField: 'from',
                     typeAhead: false,
                     hideLabel: true,
                     hideTrigger: true,
-                    cls: 'forum-searchIcon',
                     anchor: '100%',
+
+                    listConfig: {
+                        loadingText: 'Searching...',
+                        emptyText: 'No matching posts found.',
+            
+                        itemSelector: '.search-item',
+            
+                        // Custom rendering template for each item
+                        itemTpl: [
+                            '<p class="search-item"><b>From: </b> {from}</p>',
+                            '<p><b>Title: </b> {title}</p>',
+                            '<p><b>Message: </b><br> {body}</p>',
+                            '<p style="text-align:right;"><b>Received at: </b> {date}</p>',
+                            
+                        ]
+                    }
                 
                 },
             ],
