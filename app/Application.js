@@ -25,7 +25,7 @@ Ext.define('EmailClient.Application', {
         );
     },
 
-     launch:function(profile){
+    launch:function(profile){
         let isLoggedIn = localStorage.getItem('isLoggedIn');
         if(!isLoggedIn){
             Ext.widget('app-main');

@@ -22,7 +22,7 @@ Ext.define('EmailClient.view.main.MainController', {
             model = me.getViewModel(),
             refs = me.getReferences();
 
-        localStorage.removeItem('isLoggedIn');
+        localStorage.setItem('isLoggedIn', false);
         view.destroy();
         Ext.create({
             xtype: 'login'
