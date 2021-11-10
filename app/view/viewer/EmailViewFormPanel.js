@@ -1,6 +1,6 @@
 Ext.define('EmailClient.view.viewer.EmailViewForm', {
     extend:'Ext.form.Panel',
-    xtype:'viewMail',
+    // xtype:'viewMail',
     padding: '10 10 10 10',
 
     layout: 'anchor',

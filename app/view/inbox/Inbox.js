@@ -2,6 +2,7 @@ Ext.define('EmailClient.view.main.Inbox', {
     extend: 'Ext.grid.Panel',
     xtype: 'inbox',
     controller:'inboxviewcontroller',
+    reference:'inboxReference',
 
     requires: [
         'EmailClient.store.Inbox'
@@ -35,11 +36,33 @@ Ext.define('EmailClient.view.main.Inbox', {
 
     ],
 
-    // bbar: 
-    // {
-    //     xtype: 'paginginfo',
-    //     displayInfo: true,
-    //     displayMsg: 'Emails {0} - {1} of {2}',
-    //     emptyMsg: 'No Email to display'
-    // }
+    // tbar:[
+    //     {
+    //         xtype: 'button',
+    //         text : '<i class="fas fa-edit"></i>  Compose',
+    //         scale: 'medium',
+    //         tooltip: 'Compose Mail',
+    //         handler:'onComposeClick'
+    //     },
+    //     {
+    //         xtype: 'button',
+    //         text : '<i class="fas fa-sync"></i>',
+    //         scale: 'medium',
+    //         handler:'onRefreshClick'
+    //     },
+    //     {
+    //         xtype: 'button',
+    //         text : '<i class="fas fa-trash"></i>',
+    //         scale: 'medium',
+    //         handler:'onDeleteClick'
+    //     },
+    
+    // ],
+
+    // dockedItems: [
+    //     {
+    //         xtype: 'Tbar',
+    //         dock: 'top',
+    //     }]
+    
 });

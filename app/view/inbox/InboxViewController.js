@@ -12,8 +12,9 @@ Ext.define('EmailClient.view.email.InboxViewController', {
                     }
                 }
             });
+            console.log(record);
             if (record) {
-                var form = window.lookupReference('form').getForm();
+                var form = window.lookupReference('viewMailForm').getForm();
                 form.loadRecord(record);
             }
 
@@ -25,19 +26,33 @@ Ext.define('EmailClient.view.email.InboxViewController', {
         var statics = this.statics();
         
         if (selection.isRows) {
-            console.log(grid.getSelectionModel().getSelection());
-            console.log('---------selected rows---------');
+            var selected = grid.getSelectionModel().getSelection();
         }
 
         if (selection.isCells) {
-            Ext.create({
-                xtype: 'composeMail'
-            });
+            console.log('========================');
+            console.log(grid.getSelectionModel().getSelection());
+            console.log('========================');
+            statics.showForm(record);
         }
+    },
 
-        if (!selection) {
-            console.log('---------Nothingness---------');
-        }
+    onComposeClick: function(){
+        var me = this;
+        me.showForm();
+    },
+
+    showForm: function(record) {
+        var window = Ext.create({
+            xtype: 'composeMail',
+        });
+    },
+
+    onRefreshClick: function(){
+        var me = this;
+        var view = me.getView();
+        var store = view.getStore();
+        store.reload();
     },
 
 });

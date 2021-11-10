@@ -11,7 +11,7 @@ Ext.define('EmailClient.view.viewer.EmailViewForm', {
     items:[
         {
             xtype : 'form',
-            reference:'form',
+            reference:'viewMailForm',
             jsonSubmit: true,
             defaults:{
                 anchor:'95%',
@@ -58,16 +58,16 @@ Ext.define('EmailClient.view.viewer.EmailViewForm', {
                     height: 150,
                 },
 
-                {
-                    xtype: 'filefield',
-                    emptyText: 'Select file',
-                    fieldLabel: 'Attachment',
-                    name: 'file-path',
-                    buttonText: 'select',
-                    buttonConfig: {
-                        iconCls: 'fa-paperclip'
-                    }
-                }
+                // {
+                //     xtype: 'filefield',
+                //     emptyText: 'Select file',
+                //     fieldLabel: 'Attachment',
+                //     name: 'file-path',
+                //     buttonText: 'select',
+                //     buttonConfig: {
+                //         iconCls: 'fa-paperclip'
+                //     }
+                // }
 
             ],
             buttons:[

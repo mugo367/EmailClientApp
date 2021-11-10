@@ -2,6 +2,7 @@ Ext.define('EmailClient.view.composer.EmailForm', {
     extend:'Ext.window.Window',
     xtype:'composeMail',
     layout:'fit',
+    controller: 'emailformcontroller',
     
     width:1000,
     padding: '30 10 10 10',
@@ -12,7 +13,7 @@ Ext.define('EmailClient.view.composer.EmailForm', {
     items:[
         {
             xtype : 'form',
-            reference:'form',
+            reference:'composeMailForm',
             jsonSubmit: true,
             defaults:{
                 anchor:'100%',
@@ -20,10 +21,19 @@ Ext.define('EmailClient.view.composer.EmailForm', {
             },
             items:[
                 {
+                    xtype:'textfield',
+                    name: 'id',
+                    hidden:true,
+                    allowBlank: true,
+                    readOnly: true,
+                    minValue: 1
+
+                },
+                {
                   xtype:'textfield',
-                  name: 'recipient',
+                  name: 'to',
                   fieldLabel: 'To',
-                  vtype: 'email'
+                  vtype: 'email',
             
                 },
                 {
@@ -33,22 +43,22 @@ Ext.define('EmailClient.view.composer.EmailForm', {
   
                 },
                 {
-                    xtype     : 'htmleditor',
-                    name      : 'body',
+                    xtype: 'htmleditor',
+                    name: 'body',
                     fieldLabel: 'Message',
                     height: 350,
                 },
 
-                {
-                    xtype: 'filefield',
-                    emptyText: 'Select file',
-                    fieldLabel: 'Attachment',
-                    name: 'file-path',
-                    buttonText: 'select',
-                    buttonConfig: {
-                        iconCls: 'fa-paperclip'
-                    }
-                }
+                // {
+                //     xtype: 'filefield',
+                //     emptyText: 'Select file',
+                //     fieldLabel: 'Attachment',
+                //     name: 'attachment',
+                //     required: false,
+                //     buttonText: 'select',
+                //     buttonConfig: {
+                //         iconCls: 'fa-paperclip'
+                //     }
 
             ],
             buttons:[
@@ -60,6 +70,7 @@ Ext.define('EmailClient.view.composer.EmailForm', {
                 {
                     xtype:'button',
                     text:'Save',
+                    formBind: true,
                     handler:'onSave'
                 }
         ]

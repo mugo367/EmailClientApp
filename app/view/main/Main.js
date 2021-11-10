@@ -14,22 +14,7 @@ Ext.define('EmailClient.view.main.Main', {
             margin: '0 0 5 0',
             xtype: 'toolbar',
             items:[
-                {
-                    xtype: 'combo',
-                    width: '50%',
-                    store: {
-                        type: 'inbox',
-                        pageSize: 10
-                    },
-                    displayField: 'title',
-                    typeAhead: false,
-                    hideLabel: true,
-                    hideTrigger: true,
-                    cls: 'forum-searchIcon',
-                    anchor: '100%',
-        
                 
-                },
                '->',
                {
                    xtype: 'button',
@@ -81,12 +66,29 @@ Ext.define('EmailClient.view.main.Main', {
                 {
                     xtype: 'button',
                     text : '<i class="fas fa-sync"></i>',
-                    scale: 'medium'
+                    scale: 'medium',
+                    handler:'onRefreshClick'
                 },
                 {
                     xtype: 'button',
                     text : '<i class="fas fa-trash"></i>',
-                    scale: 'medium'
+                    scale: 'medium',
+                    handler:'onDeleteClick'
+                }, '->',
+                {
+                    xtype: 'combo',
+                    width: '50%',
+                    store: {
+                        type: 'inbox',
+                        pageSize: 10
+                    },
+                    displayField: 'title',
+                    typeAhead: false,
+                    hideLabel: true,
+                    hideTrigger: true,
+                    cls: 'forum-searchIcon',
+                    anchor: '100%',
+                
                 },
             ],
 
