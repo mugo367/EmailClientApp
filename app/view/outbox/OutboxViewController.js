@@ -1,8 +1,8 @@
-Ext.define('EmailClient.view.email.InboxViewController', {
+Ext.define('EmailClient.view.email.OutboxViewController', {
     extend: 'Ext.app.ViewController',
-    alias: 'controller.inboxviewcontroller',
+    alias: 'controller.outboxviewcontroller',
 
-    
+
     mixins: [
         'EmailClient.mixins.GridMixin',
     ],
@@ -21,7 +21,7 @@ Ext.define('EmailClient.view.email.InboxViewController', {
         record = me.getSelectedRecord();
         var id = record.get('id');
         if (record) {
-            var url = `http://localhost:3000/inbox/${id}`;
+            var url = `http://localhost:3000/outbox/${id}`;
             me.removeSelectedRecord(url, grid);
         }
     }

@@ -16,6 +16,13 @@ Ext.define('EmailClient.view.main.Main', {
             margin: '0 0 5 0',
             xtype: 'toolbar',
             items:[
+                {
+                    xtype: 'button',
+                    text : '<i class="fas fa-edit"></i>  Compose',
+                    scale: 'medium',
+                    tooltip: 'Compose Mail',
+                    handler:'onComposeClick'
+                },
                 
                '->',
                {
@@ -57,62 +64,6 @@ Ext.define('EmailClient.view.main.Main', {
             xtype: 'tabpanel',
             closable: false,
             
-            tbar:[
-                {
-                    xtype: 'button',
-                    text : '<i class="fas fa-edit"></i>  Compose',
-                    scale: 'medium',
-                    tooltip: 'Compose Mail',
-                    handler:'onComposeClick'
-                },
-                {
-                    xtype: 'button',
-                    text : '<i class="fas fa-sync"></i>',
-                    scale: 'medium',
-                    handler:'onRefreshClick'
-                },
-                {
-                    xtype: 'button',
-                    text : '<i class="fas fa-trash"></i>',
-                    scale: 'medium',
-                    handler:'onDeleteClick',
-                    bind:{
-                        disabled:'{inboxList.selection}'
-                    },
-                }, '->',
-                {
-                    xtype: 'combo',
-                    width: '50%',
-                    store: {
-                        type: 'inbox',
-                        pageSize: 10
-                    },
-                    displayField: 'from',
-                    valueField: 'from',
-                    typeAhead: false,
-                    hideLabel: true,
-                    hideTrigger: true,
-                    anchor: '100%',
-
-                    listConfig: {
-                        loadingText: 'Searching...',
-                        emptyText: 'No matching posts found.',
-            
-                        itemSelector: '.search-item',
-            
-                        // Custom rendering template for each item
-                        itemTpl: [
-                            '<p class="search-item"><b>From: </b> {from}</p>',
-                            '<p><b>Title: </b> {title}</p>',
-                            '<p><b>Message: </b><br> {body}</p>',
-                            '<p style="text-align:right;"><b>Received at: </b> {date}</p>',
-                            
-                        ]
-                    }
-                
-                },
-            ],
-
             items: [
                 {
                     title: 'Inbox',
