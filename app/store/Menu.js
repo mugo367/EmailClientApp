@@ -30,14 +30,6 @@ Ext.define('EmailClient.store.Menu', {
                 iconCls: 'fa-exclamation',
                 xtype: 'spam'
             },
-            {
-                text:'Delete',
-                leaf: true,
-                url:'delete',
-                xtype: 'delete',
-                iconCls: 'fa-trash',
-            }
-            
             
         ]
     }

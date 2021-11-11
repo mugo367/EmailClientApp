@@ -10,6 +10,7 @@ Ext.define('EmailClient.view.main.MainController', {
     routes: {
         'inbox': 'onInboxUrlActivated',
         'outbox': 'onOutboxUrlActivated',
+        'spam': 'onSpamUrlActivated',
     },
 
 
@@ -34,6 +35,10 @@ Ext.define('EmailClient.view.main.MainController', {
 
     onOutboxUrlActivated: function() {
         this.showView("Outbox", "outbox");
+    },
+
+    onSpamUrlActivated: function() {
+        this.showView("Spam", "spam");
     },
 
 
