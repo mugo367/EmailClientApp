@@ -1,6 +1,6 @@
 Ext.define('EmailClient.view.main.Inbox', {
     extend: 'Ext.grid.Panel',
-    xtype: 'inbox',
+    xtype: 'inboxList',
     controller:'inboxviewcontroller',
     reference:'inboxReference',
 
@@ -13,16 +13,6 @@ Ext.define('EmailClient.view.main.Inbox', {
     },
 
     layout: 'fit',
-
-    selModel: {
-        type: 'spreadsheet',
-        rowSelect: true,
-        rowNumbererHeaderWidth: 0,
-        mode: 'MULTI',
-        checkboxSelect: true,
-        pruneRemoved: false,
-        extensible: false,
-    },
 
 
     columns: [
@@ -48,5 +38,23 @@ Ext.define('EmailClient.view.main.Inbox', {
         },
 
     ],
+
+    plugins: {
+        rowexpander: {
+            rowBodyTpl: new Ext.XTemplate(
+                '<p><b>From: </b> {from}</p>',
+                '<p><b>Title: </b> {title}</p><br>',
+                '<p><b>Message: </b><br> {body}</p>',
+                '<p style="text-align:right;"><b>Received at: </b> {date}</p>',
+                )
+        }
+    },
+
+    bbar: {
+        xtype: 'pagingtoolbar',
+        displayInfo: true,
+        displayMsg: 'Emails {0} - {1} of {2}',
+        emptyMsg: 'No Email to display'
+    },
     
 });

@@ -6,6 +6,8 @@ Ext.define('EmailClient.view.main.Main', {
     controller: 'main',
     viewModel: 'main',
     layout: 'border',
+
+    
     
     items: [
         {
@@ -75,7 +77,7 @@ Ext.define('EmailClient.view.main.Main', {
                     scale: 'medium',
                     handler:'onDeleteClick',
                     bind:{
-                        disabled:'{!inbox.selection}'
+                        disabled:'{inboxList.selection}'
                     },
                 }, '->',
                 {
@@ -114,7 +116,7 @@ Ext.define('EmailClient.view.main.Main', {
             items: [
                 {
                     title: 'Inbox',
-                    xtype: 'inbox',
+                    xtype: 'inboxList',
                     
                 }, 
             ]

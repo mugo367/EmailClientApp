@@ -1,8 +1,12 @@
 Ext.define('EmailClient.view.spam.Spam', {
-    extend: 'Ext.grid.Panel',
+    extend: 'Ext.panel.Panel',
     xtype: 'spam',
     
 
 
-    html:'There is nothing to spam at the moment.'
+   items:[
+       {
+            html:'<p style="text-align:center;>There is nothing to spam at the moment.</p>'
+       }
+    ] 
 });
