@@ -73,7 +73,10 @@ Ext.define('EmailClient.view.main.Main', {
                     xtype: 'button',
                     text : '<i class="fas fa-trash"></i>',
                     scale: 'medium',
-                    handler:'onDeleteClick'
+                    handler:'onDeleteClick',
+                    bind:{
+                        disabled:'{!inbox.selection}'
+                    },
                 }, '->',
                 {
                     xtype: 'combo',
