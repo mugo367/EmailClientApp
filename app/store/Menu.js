@@ -12,7 +12,7 @@ Ext.define('EmailClient.store.Menu', {
                 leaf: true,
                 iconCls: 'fa-inbox',
                 url:'inbox',
-                xtype: 'inboxList'
+                xtype: 'inbox'
 
             },
             {

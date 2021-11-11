@@ -8,7 +8,7 @@ Ext.define('EmailClient.Application', {
 
     name: 'EmailClient',
 
-    defaultToken:'inbox',
+    //defaultToken:'inbox',
 
     quickTips: false,
     platformConfig: {

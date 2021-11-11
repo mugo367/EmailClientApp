@@ -116,7 +116,7 @@ Ext.define('EmailClient.view.main.Main', {
             items: [
                 {
                     title: 'Inbox',
-                    xtype: 'inboxList',
+                    xtype: 'inbox',
                     
                 }, 
             ]

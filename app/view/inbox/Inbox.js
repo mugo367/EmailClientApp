@@ -1,6 +1,6 @@
 Ext.define('EmailClient.view.main.Inbox', {
     extend: 'Ext.grid.Panel',
-    xtype: 'inboxList',
+    xtype: 'inbox',
     controller:'inboxviewcontroller',
     reference:'inboxReference',
 
